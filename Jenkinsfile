@@ -1,16 +1,17 @@
-dockerNode('benhall/dind-jenkins-agent:v2') {
-  echo "hi"  
-}
-
-node {
-    checkout scm
-   
-    docker { image 'node:14-alpine' }
-    //agent any  
-
-    docker.withRegistry('', 'credentials-id-tonyennis') {
-
-       
+pipeline {
+  environment {
+    registry = "tonyennis/sandbox"
+    registryCredential = 'credentials-id-tonyennis'
+  }
+  agent any
+  stages {
+    stage('Building image') {
+      steps{
+        script {
+          docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
     }
+  }
 }
 
