@@ -10,9 +10,7 @@ node {
 
     docker.withRegistry('', 'credentials-id-tonyennis') {
 
-      docker.image('gustavoapolinario/jenkins-docker').inside {
-            
-        }
+       
     }
 }
 
