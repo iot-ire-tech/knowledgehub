@@ -1,6 +1,6 @@
-dockerNode('benhall/dind-jenkins-agent:v2') {
+node  {
   // docker client
   checkout scm
-  sh "docker login -u tonyennis -p FionnAnto1972"
+  docker login -u tonyennis -p FionnAnto1972
 }
 
