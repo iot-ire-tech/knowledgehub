@@ -1,17 +1,6 @@
-pipeline {
-  environment {
-    registry = "tonyennis/sandbox"
-    registryCredential = 'credentials-id-tonyennis'
-  }
-  agent any
-  stages {
-    stage('Building image') {
-      steps{
-        script {
-          docker.build registry + ":$BUILD_NUMBER"
-        }
-      }
-    }
-  }
+dockerNode('benhall/dind-jenkins-agent:v2') {
+  // docker client
+  checkout scm
+  docker login -u tonyennis -p FionnAnto1972
 }
 
