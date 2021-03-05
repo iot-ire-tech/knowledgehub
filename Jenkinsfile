@@ -1,1 +1,4 @@
-echo hi
+node {
+  echo hi  
+}
+
