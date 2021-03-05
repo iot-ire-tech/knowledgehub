@@ -1,4 +1,4 @@
 node {
-  echo hi  
+  echo "hi"  
 }
 
