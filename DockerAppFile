@@ -1,0 +1,4 @@
+from openjdk:8
+expose 8080
+add https://tomcat.apache.org/tomcat-8.0-doc/appdev/sample/sample.war sample.war
+entrypoint ["java", "-jar", "sample.jar"
